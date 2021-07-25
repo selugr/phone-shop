@@ -1,0 +1,39 @@
+.breadcrumbs {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0.25rem 1rem;
+    width: 100%;
+}
+
+.breadcrumbs > * {
+    font-size: 1rem;
+    font-weight: 400;
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.breadcrumbs > *:not(:last-child)::after {
+    content: "/";
+    display: block;
+    position: relative;
+    margin: 0 1rem;
+}
+
+.breadcrumbs > span {
+    color: var(--color-1);
+}
+
+.breadcrumbs > a {
+    display: inline-flex;
+    color: var(--color-light);
+    transition: all var(--time-transition);
+}
+
+.breadcrumbs > a:hover {
+    color: var(--color-white);
+}
+
+@media (max-width: 60rem) {
+    .breadcrumbs > * {
+        font-size: 0.7rem;
+    }
+}

@@ -1,0 +1,35 @@
+.storage-selector {
+    display: flex;
+    gap: 2rem;
+}
+
+.storage-selector > li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.storage-selector > li > button {
+    height: 2.5rem;
+    width: 5rem;
+    z-index: 2;
+    background-color: var(--color-white);
+    border: solid 0.1rem var(--color-4);
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+    transition: background-color var(--time-transition);
+    border-radius: var(--border-radius);
+}
+
+.storage-selector > li > button > label {
+    transition: color var(--time-transition);
+    cursor: pointer;
+}
+
+.storage-selector > li.selected > button {
+    background-color: var(--color-3);
+}
+
+.storage-selector > li.selected > button > label {
+    color: var(--color-1);
+}

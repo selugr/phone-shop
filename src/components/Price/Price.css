@@ -1,0 +1,12 @@
+.price {
+    display: flex;
+    align-items: center;
+    align-self: flex-end;
+    background-color: var(--color-4);
+    color: var(--color-1);
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}

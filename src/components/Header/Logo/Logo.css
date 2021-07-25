@@ -1,0 +1,59 @@
+.header-brand {
+    display: flex;
+    align-items: center;
+}
+
+.header-brand > a {
+    display: flex;
+    align-items: center;
+}
+
+.header-brand h1 {
+    margin: 0;
+    margin-left: 1.5rem;
+    font-weight: 500;
+    font-size: 2rem;
+    color: var(--color-1);
+    white-space: nowrap;
+    transition: color var(--time-transition);
+}
+
+.header-brand h1::after {
+    content: "";
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--color-4);
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    font-size: 3rem;
+    color: var(--color-1);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--color-4);
+    clip-path: polygon(0% 0%, 75% 0%, 100% 25%, 100% 100%, 25% 100%, 0% 75%);
+    transition: transform var(--time-transition);
+}
+
+.header-brand > a:hover > .logo {
+    transform: rotate(-45deg);
+}
+
+.header-brand > a:hover > h1 {
+    color: var(--color-4);
+}
+
+@media (max-width: 30rem) {
+    .header-brand h1 {
+        display: none;
+    }
+}

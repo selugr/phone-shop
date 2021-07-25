@@ -1,0 +1,39 @@
+.item {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 0.3rem;
+    box-shadow: var(--box-shadow);
+}
+
+.item > .picture {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    transition: transform var(--time-transition);
+    background-color: var(--color-pureWhite);
+}
+
+.item > .picture > img {
+    height: 18rem;
+    padding: 2rem;
+}
+
+.item > .info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--color-1) 0%, var(--color-2) 100%);
+    z-index: 1;
+    transition: all var(--time-transition);
+}
+
+.item:hover > .picture {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.item:hover > .info {
+    background: linear-gradient(135deg, var(--color-2) 0%, var(--color-3) 100%);
+}

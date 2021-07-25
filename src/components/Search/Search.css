@@ -1,0 +1,35 @@
+.search {
+    position: sticky;
+    top: 6rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 10;
+}
+
+.search > input {
+    width: 37.5%;
+    direction: ltr;
+    text-align: right;
+    border: none;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    padding: 0.5rem 1.5rem;
+    background-color: var(--color-3);
+    box-shadow: var(--box-shadow);
+    color: var(--color-1);
+    font-weight: 600;
+}
+
+.search > input::placeholder {
+    color: var(--color-1);
+}
+
+@media (max-width: 60rem) {
+    .search {
+        top: 7.34rem;
+    }
+
+    .search > input {
+        width: 100%;
+    }
+}

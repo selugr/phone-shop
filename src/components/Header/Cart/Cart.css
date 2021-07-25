@@ -1,0 +1,38 @@
+.cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    border: 0;
+    border-radius: 50%;
+    justify-self: flex-end;
+    align-self: center;
+    background-color: var(--color-1);
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+    transition: background-color var(--time-transition);
+}
+
+.cart > .counter {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: var(--color-4);
+    color: var(--color-1);
+    font-weight: 700;
+    transform: translate(75%, 75%);
+}
+
+.cart:hover {
+    background-color: var(--color-4);
+}
+
+.cart:hover > .icon {
+    color: var(--color-1);
+    transform: scale(1.1);
+}

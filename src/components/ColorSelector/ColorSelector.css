@@ -1,0 +1,64 @@
+.color-selector {
+    display: flex;
+    gap: 2rem;
+}
+
+.color-selector > li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.color-selector > li > button {
+    height: 2rem;
+    width: 2rem;
+    z-index: 2;
+    border-radius: 50%;
+    border: solid 0.1rem var(--color-4);
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+}
+
+.color-selector > li > label {
+    text-align: center;
+    cursor: pointer;
+}
+
+.color-selector > li.selected > button {
+    box-shadow: none;
+}
+
+.color-selector > li::before {
+    content: "";
+    position: absolute;
+    transform: translateY(-0.5rem);
+    z-index: 1;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    box-shadow: var(--box-shadow);
+    background-color: var(--color-3);
+    transition: opacity var(--time-transition);
+    opacity: 0;
+}
+
+.color-selector > li.selected::before {
+    opacity: 1;
+}
+
+.color-selector > li > label::after {
+    content: "";
+    position: relative;
+    display: block;
+    z-index: 1;
+    height: 0.5rem;
+    width: 100%;
+    box-shadow: var(--box-shadow);
+    background-color: var(--color-3);
+    transition: opacity var(--time-transition);
+    opacity: 0;
+}
+
+.color-selector > li.selected > label::after {
+    opacity: 1;
+}

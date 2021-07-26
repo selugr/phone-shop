@@ -3,7 +3,7 @@ import './Loader.css'
 
 const Loader = () => {
     return (
-        <IoSync className="loader-icon" alt="loading"/>
+        <IoSync className="loader-icon" alt="Loading icon"/>
     )
 }
 

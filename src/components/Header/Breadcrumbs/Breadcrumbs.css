@@ -11,7 +11,7 @@
     border-radius: 0 0.5rem 0.5rem 0;
 }
 
-.breadcrumbs > *:not(:last-child)::after {
+.breadcrumbs > *:not(:first-child)::before {
     content: "/";
     display: block;
     position: relative;
@@ -19,11 +19,11 @@
 }
 
 .breadcrumbs > span {
+    display: flex;
     color: var(--color-1);
 }
 
 .breadcrumbs > a {
-    display: inline-flex;
     color: var(--color-light);
     transition: all var(--time-transition);
 }

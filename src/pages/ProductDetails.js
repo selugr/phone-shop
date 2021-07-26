@@ -57,7 +57,7 @@ const ProductDetails = () => {
 
     if (!product || product.id !== productId) {
         return (
-            <div className="loading">
+            <div className="loader-container">
                 {available ? <Loader/> : <h1>Product not available</h1>}
             </div>
         )

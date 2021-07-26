@@ -38,8 +38,12 @@ const ListOfProducts = () => {
         return result
     }
 
-    if (!products) {
-        return <Loader />
+    if (!products.length) {
+        return (
+            <div className="loader-container">
+                <Loader/>
+            </div>
+        )
     }
 
     return (

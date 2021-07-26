@@ -1,9 +1,9 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import Header from './Header'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { GlobalProvider } from '../GlobalContext'
 
-test('renders logo content', () => {
+test('renders logo content', async () => {
     render(
         <GlobalProvider>
             <Router>
@@ -11,6 +11,8 @@ test('renders logo content', () => {
             </Router>
         </GlobalProvider>
     )
-    const linkElement = screen.getByText(/The Phone Shop/i)
-    expect(linkElement).toBeInTheDocument()
+    await waitFor(() => {
+        const linkElement = screen.getByText(/The Phone Shop/i)
+        expect(linkElement).toBeInTheDocument()
+    })
 })

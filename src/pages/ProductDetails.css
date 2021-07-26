@@ -52,13 +52,6 @@ section.actions {
     gap: 1rem;
 }
 
-.loading {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 @media (max-width: 60rem) {
     #product-details {
         grid-template-columns: repeat(2, 1fr);

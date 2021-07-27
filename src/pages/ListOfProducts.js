@@ -11,6 +11,7 @@ const ListOfProducts = () => {
     const globalUpdateContext = useGlobalUpdateContext()
 
     const [filters, setFilters] = useState([])
+    const [filteredProducts, setFilteredProducts] = useState([])
 
     useEffect(() => {
         (async () => {
@@ -23,12 +24,18 @@ const ListOfProducts = () => {
         })()
     }, [])
 
+    useEffect(() => {
+        setFilteredProducts(
+            products.filter(p => filters.length > 0 ? isOnFilter(p) : true)
+                .map(p => <li key={p.id}><Item product={p}/></li>)
+        )
+    }, [products, filters])
+
     const handleFilter = (filter) => {
-        const filters = filter
+        setFilters(filter
             .toLowerCase()
             .split(/[ ,]+/)
-            .filter(f => f !== '')
-        setFilters(filters)
+            .filter(f => f !== ''))
     }
 
     const isOnFilter = (product) => {
@@ -38,7 +45,7 @@ const ListOfProducts = () => {
         return result
     }
 
-    if (!products.length) {
+    if (!products.length || (!filteredProducts.length && !filters.length)) {
         return (
             <div className="loader-container">
                 <Loader/>
@@ -49,14 +56,14 @@ const ListOfProducts = () => {
     return (
         <div id="product-list">
             <Search handleFilter={handleFilter} />
-            <ul className="list-container">
-                {products.length > 0
-                    ? products
-                        .filter(p => filters.length > 0 ? isOnFilter(p) : true)
-                        .map(p => <li key={p.id}><Item product={p}/></li>)
-                    : <></>
-                }
-            </ul>
+            {filteredProducts.length > 0
+                ? <ul className="list-container">
+                    {filteredProducts}
+                </ul>
+                : <div className="loader-container">
+                    <h1>No products matching search criteria</h1>
+                </div>
+            }
         </div>
     )
 }

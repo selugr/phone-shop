@@ -64,6 +64,13 @@ section.actions {
     }
 }
 
+@media (min-width: 60rem) and (max-width: 75rem) {
+    section.actions {
+        flex-direction: column-reverse;
+        gap: 2rem;
+    }
+}
+
 @media (max-width: 37rem) {
     section.actions {
         flex-direction: column-reverse;

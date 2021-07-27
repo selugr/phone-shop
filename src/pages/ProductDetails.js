@@ -129,7 +129,7 @@ const ProductDetails = () => {
                     <button
                         className="btn primary"
                         onClick={e => handleAddToCart(e)}
-                        disabled={Object.values(productOptions).includes(null)}
+                        disabled={Object.values(productOptions).includes(null) || !product.price}
                     >
                         <IoCartOutline className="mr" />Add to cart
                     </button>

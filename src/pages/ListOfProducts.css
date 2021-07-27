@@ -1,3 +1,7 @@
+#product-list {
+    position: relative;
+}
+
 .list-container {
     display: grid;
     gap: 1rem;

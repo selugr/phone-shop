@@ -57,7 +57,9 @@ main > div {
 }
 
 .loader-container {
-    position: relative;
+    position: absolute;
+    bottom: 0;
+    top: 0;
     width: 100%;
     display: flex;
     justify-content: center;
